@@ -1,14 +1,6 @@
 const express = require('express');
+const helmet = require('helmet');
 const app = express();
-
-
-
-
-
-
-
-
-
 
 
 
@@ -57,5 +49,5 @@ app.get("/", function (request, response) {
 });
 let port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Your app is listening on port ${port}`);
+console.log(`Useful Programmer Info Security App Server is running on port ${port}`);
 });

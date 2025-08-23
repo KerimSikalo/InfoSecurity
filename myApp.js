@@ -39,7 +39,7 @@ app.use(helmet.hidePoweredBy()); // Remove the X-Powered-By header
 
 
 
-module.exports = app;
+exports.default = app;
 const api = require('./server.js');
 app.use(express.static('public'));
 app.disable('strict-transport-security');

@@ -2,6 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const app = express();
 
+/*
 app.use(helmet.hidePoweredBy()); // Remove the X-Powered-By header
 
 app.use(helmet.frameguard({ action: 'deny' }));
@@ -26,8 +27,18 @@ app.use(helmet.contentSecurityPolicy({
         }
     })
 )
+*/
 
-
+//Sve ovo iznad je ukljuceno ovdje!!!
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            scriptSrc: ["'self'", "trusted-cdn.com"],
+        }
+    },
+    noCache: true
+}))
 
 
 
